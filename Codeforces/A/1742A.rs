@@ -1,5 +1,5 @@
 // Author : Harshil Jani <harshiljani2002@gmail.com>
-// Problem Link : https://codeforces.com/problemset/problem/1742/A
+// Problem Link : https://codeforces.com/problemset/problem/1760/A
 
 use std::io;
 
@@ -10,17 +10,14 @@ fn logic() {
         .read_line(&mut input)
         .expect("Failed to take input\n");
 
-    let mut numbers: Vec<i32> = input
-    .trim()
-    .split_whitespace()
-    .map(|n| n.parse().expect("Failed to parse input\n")).collect::<Vec<i32>>();
+    let mut input: Vec<i32> = input
+        .trim()
+        .split_whitespace()
+        .map(|x| x.parse().expect("Failed to convert to integer"))
+        .collect::<Vec<i32>>();
 
-    numbers.sort();
-    if numbers[0]+numbers[1] == numbers[2] {
-        println!("YES");
-    }else{
-        println!("NO");
-    }
+    input.sort();
+    println!("{}", input[1]);
 }
 
 fn main() {
@@ -38,13 +35,13 @@ fn main() {
     }
 }
 
-/* 
+/*
 Apology note to god :
 -------------------
 
 "Dear Lord ! I have always been against people who uploaded leetcode or any equivalent solutions on github.
 The reason was quite simple, I hate it. It is open source by no means if you can already have access in the
-chat or discussion sections of the forum. 
+chat or discussion sections of the forum.
 
 I am here doing same mistake but the user base who codes such questions in rust is vanishingly small and the content
 which exist in the repository is unique I promise. Please forgive me to do this if this is against the law of universe."
